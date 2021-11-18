@@ -1,15 +1,14 @@
 <template>
 <div id="map-wrap" style="height: 100vh">
-   {{this.address.formatted}}
-   {{this.$store.state.counter}} 
-   <button @click="updateAddress()"></button>
    
+     
  <client-only>
    <l-map :zoom=13 :center="markerCoords" @click="moveMarker">
      <l-tile-layer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"></l-tile-layer>
      <l-marker :lat-lng="markerCoords"></l-marker>
    </l-map>
  </client-only>
+ 
 </div>
 </template>
 
@@ -79,6 +78,8 @@ export default {
                 navigator.geolocation.getCurrentPosition((position) => {
             
                 this.markerCoords = [position.coords.latitude, position.coords.longitude]
+                this.lat = position.coords.latitude
+                this.lon = position.coords.longitude
 
                 this.getAddress ()
                             
@@ -95,6 +96,8 @@ export default {
            this.address = result.features[0].properties
            
            console.log(this.address)
+
+           this.$store.commit('setAddress', this.address)
            
            
                           
@@ -103,10 +106,7 @@ export default {
        })
             .catch(error => console.log('error', error));
     },
-    updateAddress() {
-        this.$store.commit('setCounter', this.address.formatted)
-        
-    }
+    
 
      
 

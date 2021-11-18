@@ -1,4 +1,6 @@
+export { default as MainMenu } from '../..\\components\\mainMenu.vue'
 export { default as Map } from '../..\\components\\map.vue'
+export { default as TileButton } from '../..\\components\\tileButton.vue'
 
 // nuxt/nuxt.js#8607
 function wrapFunctional(options) {

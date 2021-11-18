@@ -1,6 +1,8 @@
 <template>
- 
-  <Map/>
+<div>
+  <MainMenu/>
+  
+</div>  
 </template>
 
 <script>

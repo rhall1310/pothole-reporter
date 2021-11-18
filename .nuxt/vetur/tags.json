@@ -1,5 +1,11 @@
 {
+  "MainMenu": {
+    "description": "Auto imported from components/mainMenu.vue"
+  },
   "Map": {
     "description": "Auto imported from components/map.vue"
+  },
+  "TileButton": {
+    "description": "Auto imported from components/tileButton.vue"
   }
 }

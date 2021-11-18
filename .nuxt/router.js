@@ -4,6 +4,10 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
+const _7aee213a = () => interopDefault(import('..\\pages\\drainage.vue' /* webpackChunkName: "pages/drainage" */))
+const _4cff6085 = () => interopDefault(import('..\\pages\\footways.vue' /* webpackChunkName: "pages/footways" */))
+const _ae9093a0 = () => interopDefault(import('..\\pages\\roads.vue' /* webpackChunkName: "pages/roads" */))
+const _b4f08bb4 = () => interopDefault(import('..\\pages\\street lighting.vue' /* webpackChunkName: "pages/street lighting" */))
 const _a9c6bba2 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
@@ -18,6 +22,22 @@ export const routerOptions = {
   scrollBehavior,
 
   routes: [{
+    path: "/drainage",
+    component: _7aee213a,
+    name: "drainage"
+  }, {
+    path: "/footways",
+    component: _4cff6085,
+    name: "footways"
+  }, {
+    path: "/roads",
+    component: _ae9093a0,
+    name: "roads"
+  }, {
+    path: "/street%20lighting",
+    component: _b4f08bb4,
+    name: "street lighting"
+  }, {
     path: "/",
     component: _a9c6bba2,
     name: "index"

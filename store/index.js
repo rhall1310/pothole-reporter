@@ -1,10 +1,18 @@
 export const state = () => ({
-    address: 'hello'
+    defect: {address: 'Stanmer Drive, Eastbourne, United Kingdom', type: '', locNotes: '', addNotes: ''}
+    
   })
   
   export const mutations = {
-    setCounter(state, newAdd) {
-      state.address = newAdd
+    setAddress(state, newAdd) {
+      state.defect.address = newAdd
+      
+  },
+
+  setType (state, newType) {
+    state.defect.type = newType
   }
   
+  
 }  
+
