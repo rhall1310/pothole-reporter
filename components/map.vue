@@ -1,7 +1,7 @@
 <template>
 <div id="map-wrap" style="height: 100vh">
    {{this.address.formatted}} 
-   <button @click="getAddress()">Address</button>
+   
  <client-only>
    <l-map :zoom=13 :center="markerCoords" @click="moveMarker">
      <l-tile-layer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"></l-tile-layer>
@@ -15,7 +15,7 @@
 export default {
     data () {
         return {
-            apiKey: process.env.API_KEY,
+            apiKey: process.env.VUE_APP_API_KEY,
             markerCoords: [50.795893175589484,0.26435462099609897],
             lat: '50.795893175589484',
             lon: '0.26435462099609897',
@@ -78,7 +78,7 @@ export default {
     },
 
     getAddress () {
-        fetch('https://api.geoapify.com/v1/geocode/reverse?lat='+ this.lat + '&lon=' + this.lon +'&apiKey=' + apiKey)
+        fetch('https://api.geoapify.com/v1/geocode/reverse?lat='+ this.lat + '&lon=' + this.lon +'&apiKey=' + this.apiKey)
             .then(response => response.json())
             .then((result) => {
       
