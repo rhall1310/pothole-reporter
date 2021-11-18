@@ -1,6 +1,8 @@
 <template>
 <div id="map-wrap" style="height: 100vh">
-   {{this.address.formatted}} 
+   {{this.address.formatted}}
+   {{this.$store.state.counter}} 
+   <button @click="updateAddress()"></button>
    
  <client-only>
    <l-map :zoom=13 :center="markerCoords" @click="moveMarker">
@@ -12,7 +14,14 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
+
 export default {
+     computed: {
+    counter () {
+      return this.$store.state.counter
+    }
+    },
     data () {
         return {
             apiKey: process.env.VUE_APP_API_KEY,
@@ -93,6 +102,10 @@ export default {
            
        })
             .catch(error => console.log('error', error));
+    },
+    updateAddress() {
+        this.$store.commit('setCounter', this.address.formatted)
+        
     }
 
      
