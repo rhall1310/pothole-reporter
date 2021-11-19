@@ -1,5 +1,5 @@
 export const state = () => ({
-    defect: {address: 'Stanmer Drive, Eastbourne, United Kingdom', category: '', locNotes: '', addNotes: ''}
+    defect: {address: 'Stanmer Drive, Eastbourne, United Kingdom', categories: '', subCategory: '', locNotes: '', addNotes: ''}
     
   })
   
@@ -10,7 +10,10 @@ export const state = () => ({
   },
 
   setCategory (state, newCat) {
-    state.defect.category = newCat
+    state.defect.categories = newCat
+  },
+  setSubCat (state, newSubCat) {
+    state.defect.subCategory = newSubCat
   }
   
   

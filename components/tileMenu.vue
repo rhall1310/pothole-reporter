@@ -2,11 +2,23 @@
 
 <div>
     
-    <div class="tiles">
+    <div class="tiles" v-if="isMain" >
         
-        <div class="tile" v-for="(category, index) in categories" :key="index" @click="setCat(category[0])" >
-            <NuxtLink to="subMenu"> 
-                <TileButton :text="categories[index][0]" />
+        <div class="tile" v-for="(item, index) in menuItems" :key="index" @click="setCat(item)" >
+            <NuxtLink :to="link"> 
+                <TileButton :text="menuItems[index].category" />
+                
+            </NuxtLink>
+        </div>
+        
+    </div> 
+
+     <div class="tiles" v-else >
+               
+        <div class="tile" v-for="(item, index) in menuItems" :key="index" @click="setSubCat(item)" >
+            <NuxtLink :to="link"> 
+                
+                <TileButton :text="menuItems[index]" />
             </NuxtLink>
         </div>
     </div> 
@@ -21,12 +33,17 @@ export default {
   components: { tileButton },
 
     props: {
-        text: String,
+        menuItems: Array,
+        isMain: Boolean,
+        link: String
+
 
     }, 
   
   data () {
       return {
+
+         
           
 
       }
@@ -34,6 +51,10 @@ export default {
   methods: {
         setCat (cat) {
             this.$store.commit('setCategory', cat)
+        },
+
+        setSubCat (subCat) {
+            this.$store.commit('setSubCat', subCat)
         }
     }
 }

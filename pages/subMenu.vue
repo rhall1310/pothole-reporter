@@ -1,30 +1,25 @@
 <template>
 <div>
-  <h1>{{this.$store.state.defect.category}}</h1>
-  <TileButton />
+  <h1>{{this.$store.state.defect.categories.category}}</h1>
+  <TileMenu :menuItems="menu" :isMain="false" :link="'form'" />
   <Map/>
 </div>  
 </template>
 
 <script>
-import tileButton from '../components/tileButton.vue'
-
 export default {
-  components: { tileButton },
-
-  computed: {
-      defects () {
-          return this.$store.state.defectTypes.list
-      }
-  },
+   
   
   data () {
       return {
-          
+          menu: this.$store.state.defect.categories.subCategories
 
       }
   },
-}  
+
+ 
+}
+ 
 </script>
 
 <style>
