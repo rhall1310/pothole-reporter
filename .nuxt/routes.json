@@ -1,31 +1,10 @@
 [
   {
-    "name": "drainage",
-    "path": "/drainage",
-    "component": "D:\\\\Users\\\\Rob\\\\Documents\\\\Work\\\\Code\\\\Nuxt\\\\pothole-reporter\\\\pages\\\\drainage.vue",
-    "chunkName": "pages/drainage",
-    "_name": "_7aee213a"
-  },
-  {
-    "name": "footways",
-    "path": "/footways",
-    "component": "D:\\\\Users\\\\Rob\\\\Documents\\\\Work\\\\Code\\\\Nuxt\\\\pothole-reporter\\\\pages\\\\footways.vue",
-    "chunkName": "pages/footways",
-    "_name": "_4cff6085"
-  },
-  {
-    "name": "roads",
-    "path": "/roads",
-    "component": "D:\\\\Users\\\\Rob\\\\Documents\\\\Work\\\\Code\\\\Nuxt\\\\pothole-reporter\\\\pages\\\\roads.vue",
-    "chunkName": "pages/roads",
-    "_name": "_ae9093a0"
-  },
-  {
-    "name": "street lighting",
-    "path": "/street%20lighting",
-    "component": "D:\\\\Users\\\\Rob\\\\Documents\\\\Work\\\\Code\\\\Nuxt\\\\pothole-reporter\\\\pages\\\\street lighting.vue",
-    "chunkName": "pages/street lighting",
-    "_name": "_b4f08bb4"
+    "name": "subMenu",
+    "path": "/subMenu",
+    "component": "D:\\\\Users\\\\Rob\\\\Documents\\\\Work\\\\Code\\\\Nuxt\\\\pothole-reporter\\\\pages\\\\subMenu.vue",
+    "chunkName": "pages/subMenu",
+    "_name": "_6fba855c"
   },
   {
     "name": "index",

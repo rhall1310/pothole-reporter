@@ -8,12 +8,12 @@
      <l-marker :lat-lng="markerCoords"></l-marker>
    </l-map>
  </client-only>
- 
+
 </div>
 </template>
 
 <script>
-import { mapMutations } from 'vuex'
+
 
 export default {
      computed: {

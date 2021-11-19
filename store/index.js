@@ -1,5 +1,5 @@
 export const state = () => ({
-    defect: {address: 'Stanmer Drive, Eastbourne, United Kingdom', type: '', locNotes: '', addNotes: ''}
+    defect: {address: 'Stanmer Drive, Eastbourne, United Kingdom', category: '', locNotes: '', addNotes: ''}
     
   })
   
@@ -9,8 +9,8 @@ export const state = () => ({
       
   },
 
-  setType (state, newType) {
-    state.defect.type = newType
+  setCategory (state, newCat) {
+    state.defect.category = newCat
   }
   
   

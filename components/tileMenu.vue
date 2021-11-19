@@ -1,11 +1,13 @@
 <template>
 
 <div>
-    <h1>What do you want to report?</h1>
+    
     <div class="tiles">
         
-        <div class="tile" v-for="(defect, index) in defects" :key="index" @click="setType(defect)" >
-            <TileButton :text="defects[index]" />
+        <div class="tile" v-for="(category, index) in categories" :key="index" @click="setCat(category[0])" >
+            <NuxtLink to="subMenu"> 
+                <TileButton :text="categories[index][0]" />
+            </NuxtLink>
         </div>
     </div> 
 </div> 
@@ -14,18 +16,24 @@
 
 <script>
 import tileButton from './tileButton.vue'
+
 export default {
   components: { tileButton },
+
+    props: {
+        text: String,
+
+    }, 
   
   data () {
       return {
-          defects: ['Roads', 'Footways', 'Drainage', 'Street Lighting']
+          
 
       }
   },
   methods: {
-        setType (defect) {
-            this.$store.commit('setType', defect)
+        setCat (cat) {
+            this.$store.commit('setCategory', cat)
         }
     }
 }
@@ -33,11 +41,7 @@ export default {
 
 <style>
 
-h1 {
-    margin: auto;
-    text-align: center;
-    padding: 1em;
-}
+
 
 .tiles {
     padding: 1em;
