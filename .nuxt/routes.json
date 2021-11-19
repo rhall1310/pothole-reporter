@@ -1,5 +1,12 @@
 [
   {
+    "name": "details",
+    "path": "/details",
+    "component": "D:\\\\Users\\\\Rob\\\\Documents\\\\Work\\\\Code\\\\Nuxt\\\\pothole-reporter\\\\pages\\\\details.vue",
+    "chunkName": "pages/details",
+    "_name": "_67915342"
+  },
+  {
     "name": "subMenu",
     "path": "/subMenu",
     "component": "D:\\\\Users\\\\Rob\\\\Documents\\\\Work\\\\Code\\\\Nuxt\\\\pothole-reporter\\\\pages\\\\subMenu.vue",

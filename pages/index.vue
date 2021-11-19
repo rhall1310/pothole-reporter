@@ -2,7 +2,7 @@
 
 <div>
     <h1>What do you want to report?</h1>
-    <TileMenu :menuItems="menu" :isMain="true" :link="'subMenu'" />
+    <TileMenu :menuItems="menu" :isLast="false" :link="'subMenu'"  />
 </div> 
 
 </template>
