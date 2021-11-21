@@ -2,7 +2,7 @@
 
 <div>
     <h1>What do you want to report?</h1>
-    <TileMenu :menuItems="menu" :isLast="false" :link="'subMenu'"  />
+    <TileMenu :menuItems="menu" />
 </div> 
 
 </template>
@@ -16,7 +16,12 @@ export default {
   
   data () {
       return {
-          menu: this.$store.state.defectTypes.list
+          menu: [
+                {text: 'Roads', link: 'roads'},
+                {text: 'Footways', link: '/categories/footways'},
+                {text: 'Drainage', link: 'drainage'},
+                {text: 'Vegetation', link: 'vegetation'}
+                ]
 
       }
   },

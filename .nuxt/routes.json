@@ -1,23 +1,16 @@
 [
   {
-    "name": "details",
-    "path": "/details",
-    "component": "D:\\\\Users\\\\Rob\\\\Documents\\\\Work\\\\Code\\\\Nuxt\\\\pothole-reporter\\\\pages\\\\details.vue",
-    "chunkName": "pages/details",
-    "_name": "_67915342"
-  },
-  {
-    "name": "subMenu",
-    "path": "/subMenu",
-    "component": "D:\\\\Users\\\\Rob\\\\Documents\\\\Work\\\\Code\\\\Nuxt\\\\pothole-reporter\\\\pages\\\\subMenu.vue",
-    "chunkName": "pages/subMenu",
-    "_name": "_6fba855c"
-  },
-  {
     "name": "index",
     "path": "/",
     "component": "D:\\\\Users\\\\Rob\\\\Documents\\\\Work\\\\Code\\\\Nuxt\\\\pothole-reporter\\\\pages\\\\index.vue",
     "chunkName": "pages/index",
     "_name": "_a9c6bba2"
+  },
+  {
+    "name": "category",
+    "path": "/:category",
+    "component": "D:\\\\Users\\\\Rob\\\\Documents\\\\Work\\\\Code\\\\Nuxt\\\\pothole-reporter\\\\pages\\\\_category.vue",
+    "chunkName": "pages/_category",
+    "_name": "_40463fba"
   }
 ]

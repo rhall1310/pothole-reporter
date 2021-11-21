@@ -1,26 +1,17 @@
 <template>
 
 <div>
-    <div class="tiles" v-if="isLast" >
+  
+    <div class="tiles">
                
-        <div class="tile" v-for="(item, index) in menuItems" :key="index" @click="setSubCat(item)" >
-            <NuxtLink :to="link"> 
+        <div class="tile" v-for="(item, index) in menuItems" :key="index" @click="setCat(item.text)" >
+            <NuxtLink :to="menuItems[index].link"> 
                 
-                <TileButton :text="menuItems[index]" />
+                <TileButton :text="menuItems[index].text" />
             </NuxtLink>
         </div>
-    </div> 
+    </div>  
     
-    <div class="tiles" v-else >
-        
-        <div class="tile" v-for="(item, index) in menuItems" :key="index" @click="setCat(item)" >
-            <NuxtLink :to="link"> 
-                <TileButton v-bind:text="menuItems[index].category" />
-                
-            </NuxtLink>
-        </div>
-        
-    </div> 
 
      
 </div> 
@@ -35,7 +26,6 @@ export default {
 
     props: {
         menuItems: Array,
-        isLast: Boolean,
         link: String,
         
         
