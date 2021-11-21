@@ -18,7 +18,7 @@ export default {
       return {
           menu: [
                 {text: 'Roads', link: 'roads'},
-                {text: 'Footways', link: '/categories/footways'},
+                {text: 'Footways', link: 'footways'},
                 {text: 'Drainage', link: 'drainage'},
                 {text: 'Vegetation', link: 'vegetation'}
                 ]

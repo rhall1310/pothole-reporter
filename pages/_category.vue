@@ -1,6 +1,8 @@
 <template>
     <div>
-            {{post.text}}
+           <h1> {{cat.text}} </h1>
+
+            <TileMenu :menuItems="cat.subCats" />
 
     </div>
 </template>
@@ -13,25 +15,40 @@ export default {
 
             category: this.$route.params.category,
 
-            posts: [
+            categories: [
                 {
-                    category: 'balut',
-                    text: 'What is Balut?',
-                    link: 'Blalalalal'
+                    category: 'footways',
+                    text: 'Footways',
+                    link: 'Blalalalal',
+                    subCats: [
+                            {
+                            category: 'footways',
+                            text: 'Footways',
+                            link: 'Blalalalal',
+                            subCats: []
+                            },
+                            {
+                            category: 'footways',
+                            text: 'Footways',
+                            link: 'Blalalalal',
+                            subCats: []
+                            }
+                            ]
                 },
                  {
-                    category: 'palut',
+                    category: 'roads',
                     text: 'What is Palut?',
-                    link: 'Plalalalal'
+                    link: 'Plalalalal',
+                    subCats: []
                 },
             ]
 
             }
         },
     computed : {
-        post () {
+        cat () {
 
-            return this.posts.find(post => post.category === this.category)
+            return this.categories.find(category => category.category === this.category)
     }    
     }
 
