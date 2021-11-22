@@ -1,9 +1,28 @@
 export const state = () => ({
-    list: [
-        {category: 'Road', subCategories: [{category: 'Pothole', details: ['Lol']}, {category: 'Test', details: ['Bla', 'Lol']}], details: []},
-        {category: 'Footway', subCategories: ['Bla', 'Damaged Slabs']},
-        {category: 'Drainage', subCategories: ['Bla', 'Test']},
-        {category: 'Vegetation', subCategories: ['Bla', 'Test']}
-       
+    categories: [
+        {
+            category: 'footways',
+            text: 'Footways',
+            link: 'footways',
+            subCategories:[
+                {
+                category: 'pothole',
+                text: 'Pothole',
+                link: 'footways/pothole',
+                },
+                {
+                category: 'other',
+                text: 'Other Footway Issue',
+                link: 'footways/other',
+                
+                }
+                         ]
+        },
+         {
+            category: 'roads',
+            text: 'Roads',
+            link: 'roads',
+           
+        },
     ]
   })

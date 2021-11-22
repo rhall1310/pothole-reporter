@@ -6,6 +6,7 @@ import scrollBehavior from './router.scrollBehavior.js'
 
 const _a9c6bba2 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
 const _40463fba = () => interopDefault(import('..\\pages\\_category.vue' /* webpackChunkName: "pages/_category" */))
+const _2174840f = () => interopDefault(import('..\\pages\\_subCategories\\_subCategory.vue' /* webpackChunkName: "pages/_subCategories/_subCategory" */))
 
 const emptyFn = () => {}
 
@@ -26,6 +27,10 @@ export const routerOptions = {
     path: "/:category",
     component: _40463fba,
     name: "category"
+  }, {
+    path: "/:subCategories/:subCategory?",
+    component: _2174840f,
+    name: "subCategories-subCategory"
   }],
 
   fallback: false

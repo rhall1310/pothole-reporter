@@ -4,7 +4,7 @@
   
     <div class="tiles">
                
-        <div class="tile" v-for="(item, index) in menuItems" :key="index" @click="setCat(item.text)" >
+        <div class="tile" v-for="(item, index) in menuItems" :key="index" >
             <NuxtLink :to="menuItems[index].link"> 
                 
                 <TileButton :text="menuItems[index].text" />

@@ -16,12 +16,7 @@ export default {
   
   data () {
       return {
-          menu: [
-                {text: 'Roads', link: 'roads'},
-                {text: 'Footways', link: 'footways'},
-                {text: 'Drainage', link: 'drainage'},
-                {text: 'Vegetation', link: 'vegetation'}
-                ]
+          menu: this.$store.state.defectTypes.categories
 
       }
   },

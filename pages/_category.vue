@@ -1,10 +1,8 @@
 <template>
     <div>
-           <h1> {{cat.text}} </h1>
-
-            <TileMenu :menuItems="cat.subCats" />
-
-    </div>
+  {{cat.text}}
+  <TileMenu :menuItems="cat.subCategories" />
+  </div>
 </template>
 
 <script>
@@ -12,44 +10,16 @@ export default {
 
     data () {
         return {
-
             category: this.$route.params.category,
 
-            categories: [
-                {
-                    category: 'footways',
-                    text: 'Footways',
-                    link: 'Blalalalal',
-                    subCats: [
-                            {
-                            category: 'footways',
-                            text: 'Footways',
-                            link: 'Blalalalal',
-                            subCats: []
-                            },
-                            {
-                            category: 'footways',
-                            text: 'Footways',
-                            link: 'Blalalalal',
-                            subCats: []
-                            }
-                            ]
-                },
-                 {
-                    category: 'roads',
-                    text: 'What is Palut?',
-                    link: 'Plalalalal',
-                    subCats: []
-                },
-            ]
+            categories: this.$store.state.defectTypes.categories
+        }
+    },
 
-            }
-        },
-    computed : {
+    computed: {
         cat () {
-
             return this.categories.find(category => category.category === this.category)
-    }    
+        }
     }
 
 }
