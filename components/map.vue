@@ -1,5 +1,5 @@
 <template>
-<div id="map-wrap" style="height: 100vh">
+<div id="map-wrap">
    
      
  <client-only>
@@ -17,9 +17,7 @@
 
 export default {
      computed: {
-    counter () {
-      return this.$store.state.counter
-    }
+   
     },
     data () {
         return {
@@ -116,5 +114,9 @@ export default {
 </script>
 
 <style>
-
+ #map-wrap {
+    width: 60vh;
+    height: 60vh;
+    
+ }
 </style>

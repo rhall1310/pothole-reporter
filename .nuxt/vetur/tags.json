@@ -1,4 +1,7 @@
 {
+  "Details": {
+    "description": "Auto imported from components/details.vue"
+  },
   "Map": {
     "description": "Auto imported from components/map.vue"
   },

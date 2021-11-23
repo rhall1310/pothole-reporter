@@ -1,3 +1,4 @@
+export { default as Details } from '../..\\components\\details.vue'
 export { default as Map } from '../..\\components\\map.vue'
 export { default as TileButton } from '../..\\components\\tileButton.vue'
 export { default as TileMenu } from '../..\\components\\tileMenu.vue'
