@@ -1,6 +1,12 @@
 {
+  "Address": {
+    "description": "Auto imported from components/address.vue"
+  },
   "Details": {
     "description": "Auto imported from components/details.vue"
+  },
+  "Header": {
+    "description": "Auto imported from components/header.vue"
   },
   "Map": {
     "description": "Auto imported from components/map.vue"

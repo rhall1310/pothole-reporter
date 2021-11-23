@@ -1,6 +1,7 @@
 <template>
 
 <div>
+    <Header />
     <h1>What do you want to report?</h1>
     <TileMenu :menuItems="menu" />
 </div> 

@@ -1,16 +1,24 @@
 <template>
+<div>
+    <Header />
+    
     <div class="main-form">
+        
         <h1>{{subCat.text}}</h1>
         <p>Click or tap the map to mark the location of the issue you're reporting</p>
         <div class="map" v-if="!manualAdd">
             <Map />
+            
         </div>
-        <div>
+        {{this.$store.state.defect.address.formatted}}
+        [{{this.$store.state.defect.address.lat}},{{this.$store.state.defect.address.lon}}]
+        <div class="manual">
         <input type="checkbox" name="manual" id="manual" v-model="manualAdd">
         <label for="manual">I want to enter the address manually</label>
         </div>
         <Details />   
     </div>
+</div>    
 </template>
 
 <script>
@@ -50,6 +58,8 @@ export default {
     max-width: 75%;
     margin: auto;
     display: flex;
+    padding: 1em;
+    
 }
 
 .main-form {
@@ -59,4 +69,9 @@ export default {
     padding: 1em;
     
 }
+
+.manual {
+    padding: 1em;
+}
+
 </style>

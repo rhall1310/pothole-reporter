@@ -3,11 +3,16 @@
    
      
  <client-only>
-   <l-map :zoom=13 :center="markerCoords" @click="moveMarker">
+    
+   <l-map :zoom=13 :center="markerCoords" @click="moveMarker">    
      <l-tile-layer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"></l-tile-layer>
      <l-marker :lat-lng="markerCoords"></l-marker>
    </l-map>
+
+   
  </client-only>
+
+
 
 </div>
 </template>
@@ -119,4 +124,6 @@ export default {
     height: 60vh;
     
  }
+
+
 </style>

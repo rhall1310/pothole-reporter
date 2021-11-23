@@ -1,8 +1,9 @@
 <template>
-    <div>
-  {{cat.text}}
+<div>
+    <Header />
+  <h1>{{cat.text}}</h1>
   <TileMenu :menuItems="cat.subCategories" />
-  </div>
+</div>
 </template>
 
 <script>
