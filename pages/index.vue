@@ -17,6 +17,9 @@ export default {
 </script>
 
 <style>
+body {
+  overflow-x: hidden;
+}
 h1 {
   margin: auto;
   text-align: center;

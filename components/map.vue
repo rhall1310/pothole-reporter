@@ -1,7 +1,37 @@
 <template>
   <div id="map-wrap">
+    <div class="autocomplete-container" id="autocomplete-container">
+      <div class="form-check form-check-inline search">
+        <input
+          type="text"
+          name=""
+          id="search-bar"
+          placeholder="Enter an address"
+          v-model="addSearch"
+          class="form-control"
+          v-on:keyup.enter="autoComplete()"
+        />
+        <input
+          type="button"
+          value="Search"
+          @click="autoComplete()"
+          class="btn btn-primary"
+        />
+      </div>
+      <div class="results">
+        <div
+          class="result"
+          v-for="result in autoResults"
+          :key="result.index"
+          @click="recenterMap(result)"
+        >
+          {{ result.properties.formatted }}
+        </div>
+      </div>
+    </div>
+
     <client-only>
-      <l-map :zoom="13" :center="markerCoords" @click="moveMarker">
+      <l-map id="map" :zoom="13" :center="markerCoords" @click="moveMarker">
         <l-tile-layer
           url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
         ></l-tile-layer>
@@ -20,6 +50,7 @@ export default {
       markerCoords: [50.795893175589484, 0.26435462099609897],
       lat: "50.795893175589484",
       lon: "0.26435462099609897",
+      addSearch: "",
       address: {
         country_code: "gb",
         street: "Stanmer Drive",
@@ -47,6 +78,7 @@ export default {
         },
         place_id: "51cac342ad69ded03f59b1868bdcd3654940",
       },
+      autoResults: [],
     };
   },
 
@@ -61,6 +93,26 @@ export default {
       this.lon = event.latlng.lng;
 
       this.getAddress();
+    },
+
+    autoComplete() {
+      fetch(
+        "https://api.geoapify.com/v1/geocode/autocomplete?text=" +
+          this.addSearch +
+          "&apiKey=" +
+          this.apiKey
+      )
+        .then((response) => response.json())
+        .then((result) => {
+          console.log(result);
+          this.autoResults = result.features;
+        })
+        .catch((error) => console.log("error", error));
+    },
+
+    recenterMap(result) {
+      this.markerCoords = [result.properties.lat, result.properties.lon];
+      this.autoResults = [];
     },
 
     getLoc() {
@@ -101,7 +153,52 @@ export default {
 
 <style>
 #map-wrap {
-  width: 60vh;
-  height: 60vh;
+  width: 100vw;
+  height: 50vh;
+  padding-bottom: 3em;
+}
+
+.autocomplete-container {
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  max-width: 85%;
+  margin: auto;
+}
+
+.search {
+  margin-bottom: 1em;
+}
+
+#search-bar {
+  min-width: 16em;
+}
+
+.results {
+  position: absolute;
+  z-index: 999;
+  min-height: 10em;
+  display: none;
+}
+.result {
+  padding: 1em;
+  z-index: 999;
+  border: 1px grey solid;
+  background-color: lightgray;
+}
+
+.autocomplete-container:hover .results {
+  display: block;
+}
+
+.result:hover {
+  background-color: honeydew;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 800px) {
+  .autocomplete-container {
+    max-width: 25%;
+  }
 }
 </style>

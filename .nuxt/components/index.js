@@ -1,4 +1,3 @@
-export { default as Address } from '../..\\components\\address.vue'
 export { default as Details } from '../..\\components\\details.vue'
 export { default as Header } from '../..\\components\\header.vue'
 export { default as Map } from '../..\\components\\map.vue'

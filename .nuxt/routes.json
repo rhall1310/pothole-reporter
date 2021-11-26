@@ -3,21 +3,18 @@
     "name": "index",
     "path": "/",
     "component": "D:\\\\Users\\\\Rob\\\\Documents\\\\Work\\\\Code\\\\Nuxt\\\\pothole-reporter\\\\pages\\\\index.vue",
-    "chunkName": "pages/index",
-    "_name": "_a9c6bba2"
+    "chunkName": "pages/index"
   },
   {
     "name": "category",
     "path": "/:category",
     "component": "D:\\\\Users\\\\Rob\\\\Documents\\\\Work\\\\Code\\\\Nuxt\\\\pothole-reporter\\\\pages\\\\_category.vue",
-    "chunkName": "pages/_category",
-    "_name": "_40463fba"
+    "chunkName": "pages/_category"
   },
   {
     "name": "subCategories-subCategory",
     "path": "/:subCategories/:subCategory?",
     "component": "D:\\\\Users\\\\Rob\\\\Documents\\\\Work\\\\Code\\\\Nuxt\\\\pothole-reporter\\\\pages\\\\_subCategories\\\\_subCategory.vue",
-    "chunkName": "pages/_subCategories/_subCategory",
-    "_name": "_2174840f"
+    "chunkName": "pages/_subCategories/_subCategory"
   }
 ]
