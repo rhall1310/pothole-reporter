@@ -177,7 +177,7 @@ export default {
         details: "",
       },
       manualAdd: {
-        address1: " ",
+        address1: "",
         address2: "",
         postcode: "",
         city: "",
