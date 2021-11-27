@@ -8,6 +8,9 @@
   "Map": {
     "description": "Auto imported from components/map.vue"
   },
+  "StaticMap": {
+    "description": "Auto imported from components/staticMap.vue"
+  },
   "TileButton": {
     "description": "Auto imported from components/tileButton.vue"
   },

@@ -1,15 +1,16 @@
 export const state = () => ({
   defect: {
-    mapAddress: {},
+    address: {},
+    details: {},
   },
 });
 
 export const mutations = {
   setAddress(state, newAdd) {
-    state.defect.mapAddress = newAdd;
+    state.defect.address = newAdd;
   },
 
-  setDefect(state, newDef) {
-    state.defect = newDef;
+  setDetails(state, newDet) {
+    state.defect.details = newDet;
   },
 };

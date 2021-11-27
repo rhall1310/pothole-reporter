@@ -9,5 +9,6 @@ You can directly use them in pages and other components without the need to impo
 - `<Details>` | `<details>` (components/details.vue)
 - `<Header>` | `<header>` (components/header.vue)
 - `<Map>` | `<map>` (components/map.vue)
+- `<StaticMap>` | `<static-map>` (components/staticMap.vue)
 - `<TileButton>` | `<tile-button>` (components/tileButton.vue)
 - `<TileMenu>` | `<tile-menu>` (components/tileMenu.vue)

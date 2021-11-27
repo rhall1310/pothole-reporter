@@ -15,7 +15,7 @@
         </div>
 
         <p>
-          {{ this.$store.state.defect.mapAddress.formatted }}
+          {{ this.$store.state.defect.address.formatted }}
         </p>
       </div>
 
@@ -61,13 +61,6 @@ export default {
 </script>
 
 <style>
-html {
-  overflow-x: hidden;
-}
-body {
-  overflow-x: hidden;
-}
-
 .map {
   max-height: 50%;
   max-width: 75%;
@@ -87,12 +80,6 @@ body {
 
 .manual {
   padding: 1em;
-}
-
-.manual-address {
-  display: flex;
-  text-align: center;
-  align-items: center;
 }
 
 h1 {

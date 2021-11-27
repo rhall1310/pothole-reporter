@@ -14,7 +14,7 @@
           id=""
           class="form-control"
           required
-          v-model="defect.address1"
+          v-model="manualAdd.address1"
         />
         <label for="secondAdd">2nd line of Address</label>
         <input
@@ -22,7 +22,7 @@
           name="secondAdd"
           id=""
           class="form-control"
-          v-model="defect.address2"
+          v-model="manualAdd.address2"
         />
         <label for="postcode">Postcode</label>
         <input
@@ -31,7 +31,7 @@
           id=""
           class="form-control"
           required
-          v-model="defect.postcode"
+          v-model="manualAdd.postcode"
         />
         <label for="city">Town/City</label>
         <input
@@ -40,15 +40,11 @@
           id=""
           class="form-control"
           required
-          v-model="defect.city"
+          v-model="manualAdd.city"
         />
       </div>
       <h3>Problem Details</h3>
-      <label for="">Where is the problem located?</label>
-      <select class="form-control form-control-md" required>
-        <option>The center of the footway</option>
-        <option>The verge</option>
-      </select>
+
       <label for="loc-details"
         >Can you give any further information? Such as a house number, business
         name or description of the problem?</label
@@ -78,6 +74,8 @@
           <option>Mr</option>
           <option>Ms</option>
           <option>Mrs</option>
+          <option>Councillor</option>
+          <option>Doctor</option>
           <option>Other</option>
           <option>Prefer not to say</option>
         </select>
@@ -123,7 +121,8 @@
             required
           />
           <label class="form-check-label" for="privacy">
-            I have read and accepted the privacy policy
+            I have read and accepted the
+            <a href="/privacy" target="_blank"> privacy policy </a>
           </label>
         </div>
       </div>
@@ -167,10 +166,8 @@ export default {
   data() {
     return {
       defect: {
-        address1: " ",
-        address2: "",
-        postcode: "",
-        city: "",
+        category: this.category,
+        subCategory: this.subCategory,
         anon: "",
         title: "",
         firstName: "",
@@ -178,7 +175,13 @@ export default {
         email: "",
         phoneNumber: "",
         details: "",
-        mapAddress: { formatted: "" },
+      },
+      manualAdd: {
+        address1: " ",
+        address2: "",
+        postcode: "",
+        city: "",
+        formatted: "",
       },
     };
   },
@@ -187,9 +190,18 @@ export default {
     submitDefect() {
       const form = document.getElementById("main-form");
       if (!form.checkValidity || form.checkValidity()) {
-        this.defect.mapAddress = this.$store.state.defect.mapAddress;
-        this.$store.commit("setDefect", this.defect);
-        this.$router.push("/submitted");
+        if (this.manualAddress) {
+          this.manualAdd.formatted =
+            this.manualAdd.address1 +
+            ", " +
+            this.manualAdd.city +
+            ", " +
+            this.manualAdd.postcode;
+          this.$store.commit("setAddress", this.manualAdd);
+          this.$store.commit("setDetails", this.defect);
+          this.$router.push("/success");
+        } else this.$store.commit("setDetails", this.defect);
+        this.$router.push("/success");
       }
     },
   },
@@ -215,11 +227,17 @@ export default {
   padding-top: 1em;
 }
 
+#anon,
 #priv {
-  padding-top: 1em;
+  padding-bottom: 2em;
+  padding-top: 1.2em;
 }
 
 #title {
   max-width: 14em;
+}
+
+#image-file {
+  padding-bottom: 1em;
 }
 </style>
