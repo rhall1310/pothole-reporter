@@ -1,5 +1,5 @@
 <template>
-  <div id="map-wrap">
+  <div id="static-map-wrap">
     <client-only>
       <l-map id="map" :zoom="16" :center="pos">
         <l-tile-layer
@@ -24,4 +24,16 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+#static-map-wrap {
+  width: 100vw;
+  height: 40vh;
+  padding-bottom: 3em;
+}
+
+@media (min-width: 800px) {
+  #static-map-wrap {
+    width: 60vw;
+  }
+}
+</style>

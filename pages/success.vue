@@ -17,7 +17,7 @@
           <p>{{ this.$store.state.defect.address.formatted }}</p>
         </div>
       </div>
-      <div v-if="hasMap"><StaticMap /></div>
+      <div class="static-map" v-if="hasMap"><StaticMap /></div>
       <p style="padding-bottom: 1em">
         Thanks for helping to improve our streets
       </p>
