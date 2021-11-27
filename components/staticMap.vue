@@ -26,9 +26,10 @@ export default {
 
 <style>
 #static-map-wrap {
-  width: 100vw;
+  width: 100%;
   height: 40vh;
   padding-bottom: 3em;
+  align-items: center;
 }
 
 @media (min-width: 800px) {

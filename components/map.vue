@@ -21,7 +21,7 @@
       <div class="results">
         <div
           class="result"
-          v-for="result in autoResults"
+          v-for="result in limitResults"
           :key="result.index"
           @click="recenterMap(result)"
         >
@@ -43,7 +43,12 @@
 
 <script>
 export default {
-  computed: {},
+  computed: {
+    limitResults() {
+      return this.autoResults.slice(0, 3);
+    },
+  },
+
   data() {
     return {
       apiKey: process.env.NUXT_ENV_API_KEY,
@@ -105,7 +110,6 @@ export default {
       )
         .then((response) => response.json())
         .then((result) => {
-          console.log(result);
           this.autoResults = result.features;
         })
         .catch((error) => console.log("error", error));
@@ -143,8 +147,6 @@ export default {
         .then((result) => {
           this.address = result.features[0].properties;
 
-          console.log(this.address);
-
           this.$store.commit("setAddress", this.address);
         })
         .catch((error) => console.log("error", error));
@@ -169,18 +171,19 @@ export default {
 }
 
 .search {
-  margin-bottom: 1em;
+  margin-bottom: 0.4em;
 }
 
 #search-bar {
-  min-width: 16em;
+  min-width: 10em;
 }
 
 .results {
   position: absolute;
   z-index: 999;
-  min-height: 10em;
+  min-height: 8em;
   display: none;
+  max-height: 30vh;
 }
 .result {
   padding: 1em;

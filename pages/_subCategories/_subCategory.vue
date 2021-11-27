@@ -2,26 +2,33 @@
   <div>
     <Header />
 
-    <div class="main-form">
-      <h1>{{ subCat.text }}</h1>
+    <div class="container main-form">
+      <h2>{{ subCat.text }}</h2>
 
       <div class="map-address" v-if="!manualAdd">
         <p>
           Click or tap the map to mark the location of the issue you're
           reporting
         </p>
-        <div class="map">
-          <Map />
-        </div>
+
+        <Map />
 
         <p>
           {{ this.$store.state.defect.address.formatted }}
         </p>
       </div>
 
-      <div class="manual-check">
-        <input type="checkbox" name="manual" id="manual" v-model="manualAdd" />
-        <label for="manual">I want to enter the address manually</label>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="manual"
+          v-model="manualAdd"
+        />
+        <label class="form-check-label" for="manual">
+          I want to manually enter the address
+        </label>
       </div>
 
       <Details
@@ -61,29 +68,9 @@ export default {
 </script>
 
 <style>
-.map {
-  max-height: 50%;
-  max-width: 75%;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  padding: 1em;
-  align-items: center;
-}
-
-.main-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1em;
-}
-
-.manual {
-  padding: 1em;
-}
-
-h1 {
+h2 {
   text-align: center;
+  padding-top: 0.2em;
 }
 
 .map-address {
@@ -92,9 +79,5 @@ h1 {
   align-items: center;
   max-width: 100vw;
   text-align: center;
-}
-
-.map-address p {
-  padding: 0.5em;
 }
 </style>

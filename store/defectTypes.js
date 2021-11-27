@@ -29,7 +29,7 @@ export const state = () => ({
         {
           category: "pothole",
           text: "Pothole",
-          link: "footways/pothole",
+          link: "roads/pothole",
           img: "/pothole-icon.png",
         },
         {

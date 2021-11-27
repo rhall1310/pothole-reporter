@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header />
-    <div class="main-form">
+    <div class="container">
       <h1 class="text-success">Reported successfully</h1>
       <p>
         Thank you for your report {{ this.$store.state.defect.firstName }}.

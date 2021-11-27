@@ -11,6 +11,6 @@ export default {};
 <style>
 .header {
   text-align: center;
-  padding: 0.2em;
+  padding: 0.3em;
 }
 </style>
