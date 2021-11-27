@@ -46,7 +46,7 @@ export default {
   computed: {},
   data() {
     return {
-      apiKey: process.env.VUE_APP_API_KEY,
+      apiKey: process.env.NUXT_ENV_API_KEY,
       zoom: 15,
       markerCoords: [50.795893175589484, 0.26435462099609897],
       lat: "50.795893175589484",

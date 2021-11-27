@@ -200,7 +200,7 @@ export async function setContext (app, context) {
       payload: context.payload,
       error: context.error,
       base: app.router.options.base,
-      env: {"VUE_APP_API_KEY":"372d09ba3c254dbab83572746892e976"}
+      env: {"NUXT_ENV_API_KEY":"372d09ba3c254dbab83572746892e976"}
     }
     // Only set once
 
