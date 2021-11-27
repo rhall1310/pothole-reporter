@@ -4,8 +4,9 @@
     <div class="container">
       <h1 class="text-success">Reported successfully</h1>
       <p>
-        Thank you for your report {{ this.$store.state.defect.firstName }}.
-        Here's what you have told us -
+        Thank you for your report
+        {{ this.$store.state.defect.details.firstName }}. Here's what you have
+        told us -
       </p>
       <div class="card">
         <div class="card-body">
