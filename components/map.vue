@@ -31,7 +31,7 @@
     </div>
 
     <client-only>
-      <l-map id="map" :zoom="13" :center="markerCoords" @click="moveMarker">
+      <l-map id="map" :zoom="zoom" :center="markerCoords" @click="moveMarker">
         <l-tile-layer
           url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
         ></l-tile-layer>
@@ -47,6 +47,7 @@ export default {
   data() {
     return {
       apiKey: process.env.VUE_APP_API_KEY,
+      zoom: 15,
       markerCoords: [50.795893175589484, 0.26435462099609897],
       lat: "50.795893175589484",
       lon: "0.26435462099609897",
@@ -112,6 +113,7 @@ export default {
 
     recenterMap(result) {
       this.markerCoords = [result.properties.lat, result.properties.lon];
+      this.zoom = 16;
       this.autoResults = [];
     },
 

@@ -1,6 +1,10 @@
 <template>
   <div>
-    <form class="form-group was-validated" id="main-form">
+    <form
+      class="form-group was-validated"
+      id="main-form"
+      v-on:submit.prevent="submitDefect"
+    >
       <div v-if="manualAddress">
         <h3>Enter the address</h3>
         <label for="firstAdd">1st line of Address</label>
@@ -152,7 +156,10 @@
 <script>
 export default {
   props: {
-    manualAddress: Boolean,
+    manualAddress: {
+      type: Boolean,
+      default: false,
+    },
     category: String,
     subCategory: String,
   },
@@ -171,15 +178,19 @@ export default {
         email: "",
         phoneNumber: "",
         details: "",
-        address: { formatted: "" },
+        mapAddress: { formatted: "" },
       },
     };
   },
 
   methods: {
     submitDefect() {
-      this.$store.commit("setDefect", this.defect);
-      window.location.href = "/";
+      const form = document.getElementById("main-form");
+      if (!form.checkValidity || form.checkValidity()) {
+        this.defect.mapAddress = this.$store.state.defect.mapAddress;
+        this.$store.commit("setDefect", this.defect);
+        this.$router.push("/submitted");
+      }
     },
   },
 };
@@ -206,5 +217,9 @@ export default {
 
 #priv {
   padding-top: 1em;
+}
+
+#title {
+  max-width: 14em;
 }
 </style>

@@ -15,7 +15,7 @@
         </div>
 
         <p>
-          {{ this.$store.state.defect.address.formatted }}
+          {{ this.$store.state.defect.mapAddress.formatted }}
         </p>
       </div>
 
@@ -40,7 +40,7 @@ export default {
       category: this.$route.params.subCategories,
       subCategory: this.$route.params.subCategory,
       categories: this.$store.state.defectTypes.categories,
-      manualAdd: "",
+      manualAdd: false,
     };
   },
 
@@ -92,13 +92,22 @@ body {
 .manual-address {
   display: flex;
   text-align: center;
+  align-items: center;
 }
 
 h1 {
   text-align: center;
 }
 
-p {
+.map-address {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100vw;
   text-align: center;
+}
+
+.map-address p {
+  padding: 0.5em;
 }
 </style>
