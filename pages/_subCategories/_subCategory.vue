@@ -18,7 +18,7 @@
         </p>
       </div>
 
-      <div class="form-check">
+      <div class="form-check" id="manual-check">
         <input
           class="form-check-input"
           type="checkbox"
@@ -78,6 +78,10 @@ h2 {
   flex-direction: column;
   align-items: center;
   max-width: 100vw;
+  text-align: center;
+}
+
+#manual-check {
   text-align: center;
 }
 </style>

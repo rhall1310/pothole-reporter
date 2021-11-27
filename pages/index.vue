@@ -26,6 +26,6 @@ body {
 h1 {
   margin: auto;
   text-align: center;
-  padding: 1em;
+  padding: 0.4em;
 }
 </style>
