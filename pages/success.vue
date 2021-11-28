@@ -28,7 +28,7 @@
         </button>
       </a>
     </div>
-    <div class="container" v-else>
+    <div class="container" id="fail" v-else>
       <h1 class="text-danger" id="error">Something went wrong</h1>
       <a href="/">
         <button type="button" class="btn btn-primary btn-lg" id="retry">

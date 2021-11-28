@@ -3,30 +3,35 @@
     "name": "privacy",
     "path": "/privacy",
     "component": "D:\\\\Users\\\\Rob\\\\Documents\\\\Work\\\\Code\\\\Nuxt\\\\pothole-reporter\\\\pages\\\\privacy.vue",
-    "chunkName": "pages/privacy"
+    "chunkName": "pages/privacy",
+    "_name": "_c20d16b6"
   },
   {
     "name": "success",
     "path": "/success",
     "component": "D:\\\\Users\\\\Rob\\\\Documents\\\\Work\\\\Code\\\\Nuxt\\\\pothole-reporter\\\\pages\\\\success.vue",
-    "chunkName": "pages/success"
+    "chunkName": "pages/success",
+    "_name": "_0c7648c0"
   },
   {
     "name": "index",
     "path": "/",
     "component": "D:\\\\Users\\\\Rob\\\\Documents\\\\Work\\\\Code\\\\Nuxt\\\\pothole-reporter\\\\pages\\\\index.vue",
-    "chunkName": "pages/index"
+    "chunkName": "pages/index",
+    "_name": "_a9c6bba2"
   },
   {
     "name": "category",
     "path": "/:category",
     "component": "D:\\\\Users\\\\Rob\\\\Documents\\\\Work\\\\Code\\\\Nuxt\\\\pothole-reporter\\\\pages\\\\_category.vue",
-    "chunkName": "pages/_category"
+    "chunkName": "pages/_category",
+    "_name": "_40463fba"
   },
   {
     "name": "subCategories-subCategory",
     "path": "/:subCategories/:subCategory?",
     "component": "D:\\\\Users\\\\Rob\\\\Documents\\\\Work\\\\Code\\\\Nuxt\\\\pothole-reporter\\\\pages\\\\_subCategories\\\\_subCategory.vue",
-    "chunkName": "pages/_subCategories/_subCategory"
+    "chunkName": "pages/_subCategories/_subCategory",
+    "_name": "_2174840f"
   }
 ]
