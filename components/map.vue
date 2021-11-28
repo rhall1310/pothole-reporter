@@ -102,17 +102,21 @@ export default {
     },
 
     autoComplete() {
-      fetch(
-        "https://api.geoapify.com/v1/geocode/autocomplete?text=" +
-          this.addSearch +
-          "&apiKey=" +
-          this.apiKey
-      )
-        .then((response) => response.json())
-        .then((result) => {
-          this.autoResults = result.features;
-        })
-        .catch((error) => console.log("error", error));
+      if (this.addSearch.length >= 3) {
+        fetch(
+          "https://api.geoapify.com/v1/geocode/autocomplete?text=" +
+            this.addSearch +
+            "&apiKey=" +
+            this.apiKey
+        )
+          .then((response) => response.json())
+          .then((result) => {
+            this.autoResults = result.features;
+          })
+          .catch((error) => console.log("error", error));
+      } else {
+        alert("Search field must be at least 3 characters");
+      }
     },
 
     recenterMap(result) {

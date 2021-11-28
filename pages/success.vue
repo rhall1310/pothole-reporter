@@ -1,8 +1,8 @@
 <template>
   <div>
     <Header />
-    <div class="container">
-      <h1 class="text-success">Reported successfully</h1>
+    <div class="container" v-if="this.$store.state.defect.details.category">
+      <h1 class="text-success">Success</h1>
       <p>
         Thank you for your report
         {{ this.$store.state.defect.details.firstName }}. Here's what you have
@@ -19,12 +19,20 @@
         </div>
       </div>
       <div class="static-map" v-if="hasMap"><StaticMap /></div>
-      <p style="padding-bottom: 1em">
+      <p style="padding-bottom: 0.2em">
         Thanks for helping to improve our streets
       </p>
       <a href="/">
         <button type="button" class="btn btn-primary btn-lg" id="another">
           Report something else
+        </button>
+      </a>
+    </div>
+    <div class="container" v-else>
+      <h1 class="text-danger" id="error">Something went wrong</h1>
+      <a href="/">
+        <button type="button" class="btn btn-primary btn-lg" id="retry">
+          Try again
         </button>
       </a>
     </div>
@@ -46,5 +54,19 @@ export default {
 <style>
 .card {
   margin: 1.2em;
+}
+
+#error {
+  margin-top: 1em;
+  text-align: center;
+}
+
+#retry {
+  margin-top: 3em;
+  margin-bottom: 1em;
+}
+
+#another {
+  margin-bottom: 0.5em;
 }
 </style>

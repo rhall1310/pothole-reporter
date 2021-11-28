@@ -27,8 +27,8 @@ export default {
 <style>
 #static-map-wrap {
   width: 100%;
-  height: 40vh;
-  padding-bottom: 3em;
+  height: 33vh;
+  padding-bottom: 1em;
   align-items: center;
 }
 
