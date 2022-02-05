@@ -1,5 +1,9 @@
 # pothole-reporter
 
+An app to report issues with roads and footways such as potholes.
+
+Made with Nuxt and Bootstrap, using dynamic pages and menus to minimise repetition in the code.
+
 ## Build Setup
 
 ```bash
