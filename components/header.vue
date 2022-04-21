@@ -1,5 +1,6 @@
 <template>
   <div class="header bg-info text-light">
+    <h5></h5>
     <h2>Report a problem</h2>
   </div>
 </template>

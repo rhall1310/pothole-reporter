@@ -1,5 +1,9 @@
 # pothole-reporter
 
+The idea behind this project was to create a pothole or general highway problem reporting system that you often see on local authority or government websites.
+
+I wanted to give users a map to help them pinpoint the location of the problems they reported so chose to use Leaflet. Since the app has a lot of similar menus I used Nuxt's dynamic pages feature to generate all the menu layouts based on a single object located in the store (defectTypes.js). This makes it easy to add or remove options on the apps menus simply by editing this one object.
+
 ## Build Setup
 
 ```bash
@@ -40,7 +44,6 @@ More information about the usage of this directory in [the documentation](https:
 Layouts are a great help when you want to change the look and feel of your Nuxt app, whether you want to include a sidebar or have distinct layouts for mobile and desktop.
 
 More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
-
 
 ### `pages`
 
