@@ -1,14 +1,8 @@
 # pothole-reporter
 
-<<<<<<< HEAD
 The idea behind this project was to create a pothole or general highway problem reporting system that you often see on local authority or government websites.
 
 I wanted to give users a map to help them pinpoint the location of the problems they reported so chose to use Leaflet. Since the app has a lot of similar menus I used Nuxt's dynamic pages feature to generate all the menu layouts based on a single object located in the store (defectTypes.js). This makes it easy to add or remove options on the apps menus simply by editing this one object.
-=======
-An app to report issues with roads and footways such as potholes.
-
-Made with Nuxt and Bootstrap, using dynamic pages and menus to minimise repetition in the code.
->>>>>>> 445d84498b72c557ce71cecd350895811b721896
 
 ## Build Setup
 
